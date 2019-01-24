@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-test-repo';
+  name: string = 'steve';
+  constructor() {
+    this.changeName('John');
+  }
+  changeName(name: string): void {
+    // void for this func returns nothing
+    this.name = name;
+  }
 }

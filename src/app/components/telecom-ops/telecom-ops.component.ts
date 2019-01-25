@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Telecom } from '../models/Telecom';
+import { Telecom } from '../../models/Telecom';
+import { TelecomService } from 'src/app/services/telecom.service';
 
 @Component({
   selector: 'app-telecom-ops',
@@ -8,25 +9,11 @@ import { Telecom } from '../models/Telecom';
 })
 export class TelecomOpsComponent implements OnInit {
   telecomOps: Telecom[];
-  constructor() {}
+  constructor(private telecomService: TelecomService) {}
 
   ngOnInit() {
-    this.telecomOps = [
-      {
-        id: 1,
-        title: 'MTS',
-        balance: 100
-      },
-      {
-        id: 2,
-        title: 'Beeline',
-        balance: 100
-      },
-      {
-        id: 3,
-        title: 'Megafon',
-        balance: 100
-      }
-    ];
+    this.telecomService.getTelecoms().subscribe(telecom => {
+      console.log(telecom);
+    });
   }
 }

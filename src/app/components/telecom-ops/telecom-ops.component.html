@@ -1,0 +1,11 @@
+<div>
+  <div *ngFor="let telecom of telecomOps">
+    <input type="checkbox" name="telecom" value="{{ telecom.title }}" />{{
+      telecom.title
+    }}
+  </div>
+  <span
+    >Number of telecom compan{{ telecomOps.length > 1 ? 'ies' : 'y' }}
+    {{ telecomOps.length }}</span
+  >
+</div>

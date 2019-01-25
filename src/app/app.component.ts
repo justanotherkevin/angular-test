@@ -6,10 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-test-repo';
+  title: string = 'angular-test-repo';
   name: string = 'steve';
+  activeTelecom: number;
+
   constructor() {
     this.changeName('John');
+  }
+  test(): void {
+    console.log('test');
+  }
+  changeActiveTelecom(id: number): void {
+    this.activeTelecom = id;
   }
   changeName(name: string): void {
     // void for this func returns nothing
